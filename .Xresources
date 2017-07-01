@@ -1,0 +1,55 @@
+! Interface configuration
+URxvt.geometry:        100x25
+URxvt.font:            xft:Knack Nerd Font:style=Regular:pixelsize=15:antialias=true:hinting=true
+URxvt.boldfont:		   xft:Knack Nerd Font:style=Bold: pixelsize=15:antialias=true:hinting=true
+URxvt.letterSpace:     0
+URxvt.scrollBar:       false
+URxvt.secondaryScroll: true
+URxvt.cursorBlink:     true
+URxvt.depth:		   0
+URxvt*background:      #2F343F
+URxvt*foreground:      #EEEEEC
+
+! Scheme colours taken from gnome-terminal
+URxvt*color0:		   #2D3436
+URxvt*color1:		   #D60000
+URxvt*color2:		   #419F1A
+URxvt*color3:		   #C8A213
+URxvt*color4:		   #2662A3
+URxvt*color5:		   #784C7A
+URxvt*color6:		   #009A9B
+URxvt*color7:		   #D3D7CF
+URxvt*color8:		   #555753
+URxvt*color9:		   #EF2929
+URxvt*color10:		   #8AE234
+URxvt*color11:		   #FCE94F
+URxvt*color12:		   #729FCF
+URxvt*color13:		   #AD7FA8
+URxvt*color14:		   #34E2E2
+URxvt*color15:		   #EEEEEC
+
+! Font configuration
+Xft.dpi:			   1
+Xft.antialias:		   true
+Xft.rgba:			   rgb
+Xft.hinting:		   true
+Xft.hintstyle:		   hintfull
+
+! Perl extensions
+URxvt.perl-ext-common: default,matcher,fullscreen
+
+! URL launcher
+URxvt.url-launcher:    /usr/bin/xdg-open
+URxvt.matcher.button:  1
+
+! Fullscreen switch
+URxvt.keysym.F11:       perl:fullscreen:switch
+
+! Arrow key navigation
+URxvt.keysym.Control-Left:   \033[1;5D
+URxvt.keysym.Control-Right:  \033[1;5C
+URxvt.keysym.Meta-Left:      \033[1;5D
+URxvt.keysym.Meta-Right:     \033[1;5C
+
+! Tetris GUI
+Tetris*geometry: 57x22
