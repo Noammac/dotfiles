@@ -53,3 +53,6 @@ URxvt.keysym.Meta-Right:     \033[1;5C
 
 ! Tetris GUI
 Tetris*geometry: 57x22
+
+! Clock GUI
+Clock*geometry: 78x4

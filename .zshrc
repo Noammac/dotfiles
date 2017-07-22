@@ -102,7 +102,7 @@ alias dir="run_dir"
 alias vdir="run_vdir"
 
 # Startup commands
-if [ -z $TETRIS ]; then
+if [[ -z $TETRIS || -z $CLOCK ]]; then
 	neofetch
 	$HOME/dater.py
 fi
