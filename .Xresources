@@ -1,12 +1,11 @@
 ! Interface configuration
 URxvt.geometry:        100x25
-URxvt.font:            xft:Knack Nerd Font:style=Regular:pixelsize=15:antialias=true:hinting=true
+URxvt.font:            xft:Knack \Nerd \Font:style=Regular:pixelsize=15:antialias=true:hinting=true
 URxvt.boldfont:		   xft:Knack Nerd Font:style=Bold: pixelsize=15:antialias=true:hinting=true
 URxvt.letterSpace:     0
 URxvt.scrollBar:       false
 URxvt.secondaryScroll: true
 URxvt.cursorBlink:     true
-URxvt.depth:		   0
 URxvt*background:      #2F343F
 URxvt*foreground:      #EEEEEC
 
