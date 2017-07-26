@@ -1,1 +1,1 @@
-CLOCK=1 urxvt -name 'Clock' -e sh -c 'TETRIS=1 /bin/zsh -i -c "while true; do date | toilet -f future --gay; sleep 1; done"'
+NO_STARTUP=1 urxvt -name 'Clock' -e zsh -i -c 'while true; do date | toilet -f future --gay; sleep 1; done'

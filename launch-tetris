@@ -1,1 +1,1 @@
-urxvt -name 'Tetris' -e sh -c 'TETRIS=1 /bin/zsh -i -c "tetriscurses"'
+NO_STARTUP=1 urxvt -name 'Tetris' -e zsh -i -c 'tetriscurses'
