@@ -9,7 +9,9 @@ def ordinal(n):
 	"""Takes a number (int) and returns both the number and its ordinal suffix"""
 	return str(n) + ("th" if 4 <= n % 100 <= 20 else {1: "st", 2: "nd", 3: "rd"}.get(n % 10, "th"))
 
-print("\rToday's the %s day of the year %s, or %s in hex" % (ordinal(yday), year, hex(yday)))
+print(f"\rToday's the {ordinal(yday)} day of the year {year}, or {hex(yday)} in hex")
 
 if yday == 256:
 	print("Happy Day of the Programmer!")
+if localtime().tm_mon == 11 and localtime.tm_mday == 20:
+	print("Happy birthday!")
