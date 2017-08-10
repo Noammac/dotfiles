@@ -55,6 +55,8 @@ zle -N tetris
 ## Key bindings
 bindkey "[3~" backward-delete-word
 bindkey "\C-T" tetris
+bindkey "^[[1;3C" forward-word
+bindkey "^[[1;3D" backward-word
 
 # End functions, widgets and key bindings
 
@@ -68,6 +70,7 @@ antigen use oh-my-zsh
 antigen bundle git
 antigen bundle heroku
 antigen bundle pip
+antigen bundle virtualenv
 antigen bundle go
 # antigen bundle common-aliases
 
@@ -101,8 +104,11 @@ alias ls="run_ls"
 alias dir="run_dir"
 alias vdir="run_vdir"
 
+# WORDCHARS
+WORDCHARS=${WORDCHARS//[\/.-]=\+\@}
+
 # Startup commands
-if [[ -z $TETRIS || -z $CLOCK ]]; then
+if [[ -z $NO_STARTUP ]]; then
 	neofetch
 	$HOME/dater.py
 fi
