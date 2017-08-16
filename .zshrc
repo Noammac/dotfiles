@@ -51,7 +51,6 @@ dict() {
 ## Widgets
 tetris 1>/dev/null 2>&1
 zle -N tetris
-
 ## Key bindings
 bindkey "[3~" backward-delete-word
 bindkey "\C-T" tetris
@@ -106,6 +105,7 @@ alias vdir="run_vdir"
 
 # WORDCHARS
 WORDCHARS=${WORDCHARS//[\/.-]=\+\@}
+export WORDCHARS=$WORDCHARS
 
 # Startup commands
 if [[ -z $NO_STARTUP ]]; then
