@@ -1,0 +1,1 @@
+SECTION=$1 PROGRAM=$2 NO_STARTUP=1 urxvt -name 'Man' -e zsh -i -c 'man $SECTION $PROGRAM'
