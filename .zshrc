@@ -13,6 +13,7 @@ run_vdir() {
 }
 
 # User configuration
+PAGER="most"
 export GOPATH="$HOME/go"
 export PATH="$PATH:$GOPATH/bin"
 export GPG_TTY=$(tty)
