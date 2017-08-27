@@ -1,19 +1,5 @@
-# even-better-ls setup
-export LS_COLORS=$(ls_colors_generator)
-run_ls() {
-	ls-i --color=auto -w $(tput cols) "$@"
-}
-
-run_dir() {
-	dir-i --color=auto -w $(tput cols) "$@"
-}
-
-run_vdir() {
-	vdir-i --color=auto -w $(tput cols) "$@"
-}
-
 # User configuration
-PAGER="most"
+PAGER="less"
 export GOPATH="$HOME/go"
 export PATH="$PATH:$GOPATH/bin"
 export GPG_TTY=$(tty)
@@ -21,7 +7,7 @@ export GPG_TTY=$(tty)
 export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 # Editor
-if [[ -n $SSH_CONNECTION ]]; then
+if [[ -n $SSH_CONNECTION || ! -e $GOPATH/bin/micro ]]; then
 	export EDITOR='nano'
 else
 	export EDITOR='micro'
@@ -91,6 +77,7 @@ antigen apply
 
 # End Antigen
 
+## Aliases and even-better-ls
 # aliases, needs to be executed after oh-my-zsh to assert higher priority
 alias please="sudo"
 alias fucking="sudo"
@@ -100,15 +87,32 @@ alias ccat="pygmentize -g"
 alias nano="micro"
 alias קסןא="exit"
 alias ךד="ls"
-alias ls="run_ls"
-alias dir="run_dir"
-alias vdir="run_vdir"
 
-# WORDCHARS
+# even-better-ls setup, needs to be executed after oh-my-zsh for the same reason
+if [[ -e /usr/bin/ls-i && -e /usr/bin/dir-i && -e /usr/bin/vdir-i ]]; then
+	export LS_COLORS=$(ls_colors_generator)
+	run_ls() {
+		ls-i --color=auto -w $(tput cols) "$@"
+	}
+
+		run_dir() {
+		dir-i --color=auto -w $(tput cols) "$@"
+	}
+
+		run_vdir() {
+		vdir-i --color=auto -w $(tput cols) "$@"
+	}
+
+	alias ls="run_ls"
+	alias dir="run_dir"
+	alias vdir="run_vdir"
+fi
+
+# WORDCHARS, I'm not sure it even works
 WORDCHARS=${WORDCHARS//[\/.-]=\+\@}
 export WORDCHARS=$WORDCHARS
 
-# Startup commands
+# Startup commands, refer to launch-{tetris,man} and to clock
 if [[ -z $NO_STARTUP ]]; then
 	neofetch
 	$HOME/dater.py
