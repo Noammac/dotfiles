@@ -1,5 +1,5 @@
 # User configuration
-PAGER="less"
+export PAGER="most"
 export GOPATH="$HOME/go"
 export PATH="$PATH:$GOPATH/bin"
 export GPG_TTY=$(tty)
@@ -58,6 +58,7 @@ antigen bundle heroku
 antigen bundle pip
 antigen bundle virtualenv
 antigen bundle go
+antigen bundle archlinux
 # antigen bundle common-aliases
 
 ## Syntax highlighting
@@ -79,14 +80,18 @@ antigen apply
 
 ## Aliases and even-better-ls
 # aliases, needs to be executed after oh-my-zsh to assert higher priority
+# aliases using already-installed programs
 alias please="sudo"
 alias fucking="sudo"
 alias py="python3"
-alias tb="nc termbin.com 9999"
-alias ccat="pygmentize -g"
-alias nano="micro"
+alias gdiff="diff -du --color=always"
 alias קסןא="exit"
 alias ךד="ls"
+
+# aliases using programs that need to be installed locally
+if [[ -e /usr/bin/nc ]]; then alias tb="nc termbin.com 9999"; fi
+if [[ -e /usr/bin/pygmentize ]]; then alias ccat="pygmentize -g"; fi
+if [[ -e $GOPATH/bin/micro ]]; then alias nano="micro"; fi
 
 # even-better-ls setup, needs to be executed after oh-my-zsh for the same reason
 if [[ -e /usr/bin/ls-i && -e /usr/bin/dir-i && -e /usr/bin/vdir-i ]]; then
