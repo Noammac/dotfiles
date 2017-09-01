@@ -1,5 +1,5 @@
 # User configuration
-export PAGER="most"
+if [[ -e /usr/bin/most ]]; then export PAGER="most"; fi
 export GOPATH="$HOME/go"
 export PATH="$PATH:$GOPATH/bin"
 export GPG_TTY=$(tty)
