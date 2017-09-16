@@ -6,12 +6,14 @@
     "colorscheme": "monokai",
     "cursorline": true,
     "eofnewline": false,
+    "fileformat": "unix",
     "ftoptions": false,
     "ignorecase": false,
-    "indentchar": "\u0009",
+    "indentchar": "\t",
     "infobar": true,
     "keepautoindent": false,
     "linter": true,
+    "mouse": true,
     "pluginchannels": [
         "https://raw.githubusercontent.com/micro-editor/plugin-channel/master/channel.json"
     ],
