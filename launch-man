@@ -1,1 +1,9 @@
-SECTION=$1 PROGRAM=$2 NO_STARTUP=1 urxvt -name 'Man' -e zsh -i -c 'man $SECTION $PROGRAM'
+SECTION=$1 PROGRAM=$2 \
+LESS_TERMCAP_md=$'\e[01;31m' \
+LESS_TERMCAP_me=$'\e[0m' \
+LESS_TERMCAP_se=$'\e[0m' \
+LESS_TERMCAP_so=$'\e[01;44;33m' \
+LESS_TERMCAP_ue=$'\e[0m' \
+LESS_TERMCAP_us=$'\e[01;32m' \
+PAGER=less NO_STARTUP=1 \
+urxvt -name 'Man' -e bash -i -c 'man $SECTION $PROGRAM'
