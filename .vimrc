@@ -90,6 +90,9 @@ Plugin 'SirVer/ultisnips'
 " Snippets are seperated from the engine
 Plugin 'honza/vim-snippets'
 
+" Git integration
+Plugin 'tpope/vim-fugitive'
+
 " Status line
 Plugin 'itchyny/lightline.vim'
 
@@ -104,6 +107,11 @@ let g:UltiSnipsEditSplit="vertical"
 
 " lightline configuration
 let g:lightline = {
+		\ 'colorscheme': 'wombat',
+		\ 'active': {
+		\   'left': [ [ 'mode', 'paste'],
+		\             [ 'branch', 'readonly', 'filename', 'modified' ] ]
+		\ },
 		\ 'component': {
 		\   'lineinfo': ' %3l:%-2v',
 		\ },

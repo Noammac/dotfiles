@@ -3,7 +3,7 @@ if [[ -e /usr/bin/most ]]; then export PAGER="most"; fi
 export GOPATH="$HOME/go"
 export PATH="$PATH:$GOPATH/bin"
 export GPG_TTY=$(tty)
-# export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CONFIG_HOME="$HOME/.config"
 export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 # Editor
@@ -43,6 +43,7 @@ bindkey "[3~" backward-delete-word
 bindkey "\C-T" tetris
 bindkey "^[[1;3C" forward-word
 bindkey "^[[1;3D" backward-word
+bindkey -v # vim-like keybindings
 
 # End functions, widgets and key bindings
 
@@ -59,6 +60,7 @@ antigen bundle pip
 antigen bundle virtualenv
 antigen bundle go
 antigen bundle archlinux
+antigen bundle command-not-found
 # antigen bundle common-aliases
 
 ## Syntax highlighting
@@ -81,6 +83,7 @@ antigen apply
 ## Aliases and even-better-ls
 # aliases, needs to be executed after oh-my-zsh to assert higher priority
 # aliases using already-installed programs
+alias l.="ls -d .*"
 alias please="sudo"
 alias fucking="sudo"
 alias py="python3"
