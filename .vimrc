@@ -110,28 +110,34 @@ let g:lightline = {
 		\ 'colorscheme': 'wombat',
 		\ 'active': {
 		\   'left': [ [ 'mode', 'paste'],
-		\             [ 'branch', 'readonly', 'filename', 'modified' ] ]
+		\             [ 'fugitive', 'readonly', 'filename' ] ]
 		\ },
 		\ 'component': {
 		\   'lineinfo': ' %3l:%-2v',
 		\ },
 		\ 'component_function': {
 		\   'readonly': 'LightlineReadonly',
-		\   'fugitive': 'LightlineFugitive'
+		\   'fugitive': 'LightlineFugitive',
+		\   'filename': 'LightlineFilename'
 		\ },
 		\ 'separator': { 'left': '', 'right': '' },
 		\ 'subseparator': { 'left': '', 'right': '' }
 		\ }
-	function! LightlineReadonly()
-		return &readonly ? '' : ''
-	endfunction
-	function! LightlineFugitive()
-		if exists('*fugitive#head')
-			let branch = fugitive#head()
-			return branch !=# '' ? ''.branch : ''
-		endif
-		return ''
-	endfunction
+function! LightlineReadonly()
+	return &readonly ? '' : ''
+endfunction
+function! LightlineFugitive()
+	if exists('*fugitive#head')
+		let branch = fugitive#head()
+		return branch !=# '' ? ''.branch : ''
+	endif
+	return ''
+endfunction
+function! LightlineFilename()
+	let filename = expand('%:t') !=# '' ? expand('%:t') : '[No Name]'
+	let modified = &modified ? ' +' : ''
+	return filename . modified
+endfunction
 
 " tmuxline configuration
 let g:tmuxline_theme = 'lightline'

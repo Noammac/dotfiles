@@ -43,7 +43,6 @@ bindkey "[3~" backward-delete-word
 bindkey "\C-T" tetris
 bindkey "^[[1;3C" forward-word
 bindkey "^[[1;3D" backward-word
-bindkey -v # vim-like keybindings
 
 # End functions, widgets and key bindings
 
@@ -119,6 +118,9 @@ fi
 # WORDCHARS, I'm not sure it even works
 WORDCHARS=${WORDCHARS//[\/.-]=\+\@}
 export WORDCHARS=$WORDCHARS
+
+# vim-like keybindings
+bindkey -v 
 
 # Startup commands, refer to launch-{tetris,man} and to clock
 if [[ -z $NO_STARTUP ]]; then
