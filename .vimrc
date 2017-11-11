@@ -90,6 +90,9 @@ Plugin 'SirVer/ultisnips'
 " Snippets are seperated from the engine
 Plugin 'honza/vim-snippets'
 
+" Minimap
+Plugin 'severin-lemaignan/vim-minimap'
+
 " Git integration
 Plugin 'tpope/vim-fugitive'
 
