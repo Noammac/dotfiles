@@ -9,11 +9,6 @@
 "  for MS-DOS and Win32:  $VIM\_vimrc
 "	    for OpenVMS:  sys$login:.vimrc
 
-" When started as "evim", evim.vim will already have done these settings.
-if v:progname =~? "evim"
-  finish
-endif
-
 " Get the defaults that most users want.
 source $VIMRUNTIME/defaults.vim
 
@@ -43,12 +38,9 @@ if has("autocmd")
 
   augroup END
 
-else
-
-  set autoindent		" always set autoindenting on
-
 endif " has("autocmd")
 
+set autoindent		" always set autoindenting on
 " Add optional packages.
 "
 " The matchit plugin makes the % command work better, but it is not backwards
@@ -58,7 +50,6 @@ endif " has("autocmd")
 if has('syntax') && has('eval')
   packadd! matchit
 endif
-set nocompatible              " be iMproved, required
 filetype off                  " required
 set noshowmode
 set laststatus=2
@@ -126,17 +117,17 @@ let g:lightline = {
 		\ 'separator': { 'left': '', 'right': '' },
 		\ 'subseparator': { 'left': '', 'right': '' }
 		\ }
-function! LightlineReadonly()
+function! LightlineReadonly() abort
 	return &readonly ? '' : ''
 endfunction
-function! LightlineFugitive()
+function! LightlineFugitive() abort
 	if exists('*fugitive#head')
 		let branch = fugitive#head()
 		return branch !=# '' ? ''.branch : ''
 	endif
 	return ''
 endfunction
-function! LightlineFilename()
+function! LightlineFilename() abort
 	let filename = expand('%:t') !=# '' ? expand('%:t') : '[No Name]'
 	let modified = &modified ? ' +' : ''
 	return filename . modified
