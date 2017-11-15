@@ -75,12 +75,6 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-" Track ultisnips engine
-Plugin 'SirVer/ultisnips'
-
-" Snippets are seperated from the engine
-Plugin 'honza/vim-snippets'
-
 " Minimap
 Plugin 'severin-lemaignan/vim-minimap'
 
@@ -95,12 +89,6 @@ Plugin 'itchyny/lightline.vim'
 
 " tmux status line
 Plugin 'edkolev/tmuxline.vim'
-
-" Ultisnips Configuration
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-let g:UltiSnipsEditSplit="vertical"
 
 " Indentation guide
 let g:indent_guides_enable_on_vim_startup = 1
