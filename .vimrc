@@ -75,6 +75,9 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
+" ALE linting and completion
+Plugin 'w0rp/ale'
+
 " Minimap
 Plugin 'severin-lemaignan/vim-minimap'
 
