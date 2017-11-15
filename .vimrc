@@ -81,9 +81,6 @@ Plugin 'w0rp/ale'
 " Minimap
 Plugin 'severin-lemaignan/vim-minimap'
 
-" Indentation guide
-Plugin 'nathanaelkane/vim-indent-guides'
-
 " Git integration
 Plugin 'tpope/vim-fugitive'
 
@@ -92,9 +89,6 @@ Plugin 'itchyny/lightline.vim'
 
 " tmux status line
 Plugin 'edkolev/tmuxline.vim'
-
-" Indentation guide
-let g:indent_guides_enable_on_vim_startup = 1
 
 " lightline configuration
 let g:lightline = {
