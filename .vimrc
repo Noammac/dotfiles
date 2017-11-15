@@ -84,6 +84,9 @@ Plugin 'honza/vim-snippets'
 " Minimap
 Plugin 'severin-lemaignan/vim-minimap'
 
+" Indentation guide
+Plugin 'nathanaelkane/vim-indent-guides'
+
 " Git integration
 Plugin 'tpope/vim-fugitive'
 
@@ -98,6 +101,9 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical"
+
+" Indentation guide
+let g:indent_guides_enable_on_vim_startup = 1
 
 " lightline configuration
 let g:lightline = {
